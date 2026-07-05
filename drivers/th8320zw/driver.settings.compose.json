@@ -1,0 +1,13 @@
+[
+  {
+    "id": "unit_note",
+    "type": "label",
+    "label": {
+      "en": "Temperature unit"
+    },
+    "value": "Celsius (°C)",
+    "hint": {
+      "en": "This app works in Celsius by default; Homey then shows temperatures in your region's unit. Thermostats set to Fahrenheit are supported too — the app converts automatically. Keep the thermostat itself in Celsius for the cleanest values.\n\nTo change it on the thermostat: press SYSTEM, then press and hold the two blank buttons to open Installer Setup, go to Function 0330, and select Celsius."
+    }
+  }
+]

@@ -1,0 +1,11 @@
+node_modules/
+.homeybuild/
+.DS_Store
+*.pdf
+*.png
+!assets/**/*.png
+!drivers/**/assets/**/*.png
+
+# internal working docs (kept local, not published)
+review.md
+todo.md

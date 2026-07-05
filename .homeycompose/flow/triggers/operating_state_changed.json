@@ -1,0 +1,23 @@
+{
+  "id": "operating_state_changed",
+  "title": { "en": "The operating state changed" },
+  "titleFormatted": { "en": "The operating state became [[state]]" },
+  "hint": { "en": "Triggers when the system starts heating or cooling, or goes idle." },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=th8320zw"
+    },
+    {
+      "type": "dropdown",
+      "name": "state",
+      "title": { "en": "State" },
+      "values": [
+        { "id": "heating", "title": { "en": "Heating" } },
+        { "id": "cooling", "title": { "en": "Cooling" } },
+        { "id": "idle", "title": { "en": "Idle" } }
+      ]
+    }
+  ]
+}

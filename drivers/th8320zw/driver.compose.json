@@ -1,0 +1,41 @@
+{
+  "name": {
+    "en": "TH8320ZW Thermostat"
+  },
+  "class": "thermostat",
+  "images": {
+    "large": "drivers/th8320zw/assets/images/large.png",
+    "small": "drivers/th8320zw/assets/images/small.png",
+    "xlarge": "drivers/th8320zw/assets/images/xlarge.png"
+  },
+  "capabilities": [
+    "onoff",
+    "measure_temperature",
+    "target_temperature",
+    "thermostat_state",
+    "thermostat_mode_custom",
+    "thermostat_fan_mode_custom"
+  ],
+  "energy": {
+    "approximation": {
+      "usageConstant": 2
+    }
+  },
+  "zwave": {
+    "manufacturerId": 57,
+    "productTypeId": 17,
+    "productId": 1,
+    "learnmode": {
+      "image": "drivers/th8320zw/assets/images/large.png",
+      "instruction": {
+        "en": "On the thermostat, press SYSTEM, then press and hold the two blank buttons until the display changes to Installer Setup. Use the arrow keys to select Function 10, then set it to 1 to add the thermostat to the Z-Wave network."
+      }
+    },
+    "unlearnmode": {
+      "image": "drivers/th8320zw/assets/images/large.png",
+      "instruction": {
+        "en": "On the thermostat, press SYSTEM, then press and hold the two blank buttons until the display changes to Installer Setup. Use the arrow keys to select Function 10, then set it to 0 to remove the thermostat from the Z-Wave network."
+      }
+    }
+  }
+}

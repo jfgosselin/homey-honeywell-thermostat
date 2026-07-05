@@ -1,0 +1,17 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Operating State"
+  },
+  "desc": {
+    "en": "Whether the HVAC system is currently heating, cooling, or idle."
+  },
+  "uiComponent": "sensor",
+  "getable": true,
+  "setable": false,
+  "values": [
+    { "id": "idle", "title": { "en": "Idle" } },
+    { "id": "heating", "title": { "en": "Heating" } },
+    { "id": "cooling", "title": { "en": "Cooling" } }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "operating_state_is",
+  "title": { "en": "The operating state !{{is|is not}}" },
+  "titleFormatted": { "en": "The operating state !{{is|is not}} [[state]]" },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=th8320zw"
+    },
+    {
+      "type": "dropdown",
+      "name": "state",
+      "title": { "en": "State" },
+      "values": [
+        { "id": "heating", "title": { "en": "Heating" } },
+        { "id": "cooling", "title": { "en": "Cooling" } },
+        { "id": "idle", "title": { "en": "Idle" } }
+      ]
+    }
+  ]
+}

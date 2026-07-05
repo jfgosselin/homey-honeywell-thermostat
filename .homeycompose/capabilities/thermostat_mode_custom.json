@@ -1,0 +1,15 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Mode"
+  },
+  "uiComponent": "picker",
+  "getable": true,
+  "setable": true,
+  "values": [
+    { "id": "off", "title": { "en": "Off" } },
+    { "id": "heat", "title": { "en": "Heat" } },
+    { "id": "cool", "title": { "en": "Cool" } },
+    { "id": "emergency_heat", "title": { "en": "Emergency Heat" } }
+  ]
+}

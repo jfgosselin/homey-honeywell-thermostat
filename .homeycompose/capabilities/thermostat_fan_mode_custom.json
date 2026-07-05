@@ -1,0 +1,14 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Fan Mode"
+  },
+  "uiComponent": "picker",
+  "getable": true,
+  "setable": true,
+  "values": [
+    { "id": "auto", "title": { "en": "Auto" } },
+    { "id": "on", "title": { "en": "On" } },
+    { "id": "circulate", "title": { "en": "Circulate" } }
+  ]
+}

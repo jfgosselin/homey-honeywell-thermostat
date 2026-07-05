@@ -1,0 +1,282 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.jfgosselin.honeywell",
+  "version": "1.0.7",
+  "brandColor": "#ED1C24",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Honeywell Z-Wave Thermostat"
+  },
+  "description": {
+    "en": "Adds support for Honeywell Z-Wave thermostats."
+  },
+  "category": [
+    "climate"
+  ],
+  "permissions": [],
+  "author": {
+    "name": "Jean-Francois Gosselin",
+    "email": "jfgosselin+homey@gmail.com"
+  },
+  "support": "mailto:jfgosselin+homey@gmail.com",
+  "source": "https://github.com/jfgosselin/homey-honeywell-thermostat",
+  "images": {
+    "large": "assets/images/large.png",
+    "small": "assets/images/small.png",
+    "xlarge": "assets/images/xlarge.png"
+  },
+  "flow": {
+    "triggers": [
+      {
+        "id": "operating_state_changed",
+        "title": {
+          "en": "The operating state changed"
+        },
+        "titleFormatted": {
+          "en": "The operating state became [[state]]"
+        },
+        "hint": {
+          "en": "Triggers when the system starts heating or cooling, or goes idle."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=th8320zw"
+          },
+          {
+            "type": "dropdown",
+            "name": "state",
+            "title": {
+              "en": "State"
+            },
+            "values": [
+              {
+                "id": "heating",
+                "title": {
+                  "en": "Heating"
+                }
+              },
+              {
+                "id": "cooling",
+                "title": {
+                  "en": "Cooling"
+                }
+              },
+              {
+                "id": "idle",
+                "title": {
+                  "en": "Idle"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "operating_state_is",
+        "title": {
+          "en": "The operating state !{{is|is not}}"
+        },
+        "titleFormatted": {
+          "en": "The operating state !{{is|is not}} [[state]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=th8320zw"
+          },
+          {
+            "type": "dropdown",
+            "name": "state",
+            "title": {
+              "en": "State"
+            },
+            "values": [
+              {
+                "id": "heating",
+                "title": {
+                  "en": "Heating"
+                }
+              },
+              {
+                "id": "cooling",
+                "title": {
+                  "en": "Cooling"
+                }
+              },
+              {
+                "id": "idle",
+                "title": {
+                  "en": "Idle"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "TH8320ZW Thermostat"
+      },
+      "class": "thermostat",
+      "images": {
+        "large": "drivers/th8320zw/assets/images/large.png",
+        "small": "drivers/th8320zw/assets/images/small.png",
+        "xlarge": "drivers/th8320zw/assets/images/xlarge.png"
+      },
+      "capabilities": [
+        "onoff",
+        "measure_temperature",
+        "target_temperature",
+        "thermostat_state",
+        "thermostat_mode_custom",
+        "thermostat_fan_mode_custom"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 2
+        }
+      },
+      "zwave": {
+        "manufacturerId": 57,
+        "productTypeId": 17,
+        "productId": 1,
+        "learnmode": {
+          "image": "drivers/th8320zw/assets/images/large.png",
+          "instruction": {
+            "en": "On the thermostat, press SYSTEM, then press and hold the two blank buttons until the display changes to Installer Setup. Use the arrow keys to select Function 10, then set it to 1 to add the thermostat to the Z-Wave network."
+          }
+        },
+        "unlearnmode": {
+          "image": "drivers/th8320zw/assets/images/large.png",
+          "instruction": {
+            "en": "On the thermostat, press SYSTEM, then press and hold the two blank buttons until the display changes to Installer Setup. Use the arrow keys to select Function 10, then set it to 0 to remove the thermostat from the Z-Wave network."
+          }
+        }
+      },
+      "id": "th8320zw",
+      "settings": [
+        {
+          "id": "unit_note",
+          "type": "label",
+          "label": {
+            "en": "Temperature unit"
+          },
+          "value": "Celsius (°C)",
+          "hint": {
+            "en": "This app works in Celsius by default; Homey then shows temperatures in your region's unit. Thermostats set to Fahrenheit are supported too — the app converts automatically. Keep the thermostat itself in Celsius for the cleanest values.\n\nTo change it on the thermostat: press SYSTEM, then press and hold the two blank buttons to open Installer Setup, go to Function 0330, and select Celsius."
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": {
+    "thermostat_fan_mode_custom": {
+      "type": "enum",
+      "title": {
+        "en": "Fan Mode"
+      },
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Auto"
+          }
+        },
+        {
+          "id": "on",
+          "title": {
+            "en": "On"
+          }
+        },
+        {
+          "id": "circulate",
+          "title": {
+            "en": "Circulate"
+          }
+        }
+      ]
+    },
+    "thermostat_mode_custom": {
+      "type": "enum",
+      "title": {
+        "en": "Mode"
+      },
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "off",
+          "title": {
+            "en": "Off"
+          }
+        },
+        {
+          "id": "heat",
+          "title": {
+            "en": "Heat"
+          }
+        },
+        {
+          "id": "cool",
+          "title": {
+            "en": "Cool"
+          }
+        },
+        {
+          "id": "emergency_heat",
+          "title": {
+            "en": "Emergency Heat"
+          }
+        }
+      ]
+    },
+    "thermostat_state": {
+      "type": "enum",
+      "title": {
+        "en": "Operating State"
+      },
+      "desc": {
+        "en": "Whether the HVAC system is currently heating, cooling, or idle."
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "values": [
+        {
+          "id": "idle",
+          "title": {
+            "en": "Idle"
+          }
+        },
+        {
+          "id": "heating",
+          "title": {
+            "en": "Heating"
+          }
+        },
+        {
+          "id": "cooling",
+          "title": {
+            "en": "Cooling"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "com.jfgosselin.honeywell",
+  "version": "1.0.7",
+  "description": "Honeywell Z-Wave Thermostats for Homey",
+  "main": "app.js",
+  "dependencies": {
+    "homey-zwavedriver": "^2.2.3"
+  }
+}

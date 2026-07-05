@@ -1,0 +1,5 @@
+# Files that must not be bundled into the published Homey app
+*.pdf
+review.md
+todo.md
+README.md
