@@ -1,17 +1,21 @@
 {
   "id": "com.jfgosselin.honeywell",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "brandColor": "#ED1C24",
   "compatibility": ">=5.0.0",
   "sdk": 3,
-  "platforms": ["local"],
+  "platforms": [
+    "local"
+  ],
   "name": {
     "en": "Honeywell Z-Wave Thermostat"
   },
   "description": {
     "en": "Adds support for Honeywell Z-Wave thermostats."
   },
-  "category": ["climate"],
+  "category": [
+    "climate"
+  ],
   "permissions": [],
   "author": {
     "name": "Jean-Francois Gosselin",
